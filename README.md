@@ -17,6 +17,10 @@ This guide aims to explain how to use some basic linux features and software lik
 | Distribution | The linux kernel bundelt with the software to make it usable |
 | Package Manager | A piece of software that lets you install software from a repository |
 | Repository | A collection of software often used by a package manager |
+| Command | A word (or string) you enter in a command-line |
+| Options | The word option in the context of a command stands for `-<letter>` |
+| Flag | The word Flag in the context of a command stands for `--<letters>` |
+| Dependencies | Software that the software depends on |
 ## Distrobutions
 A distribution - short distro - is basically the linux kernel - the core of an os - bundelt with the software necessary to make it usable. 
 
@@ -38,7 +42,7 @@ A distro used by **beginner and advanced users**. It has a **big community** so 
 - [Pop!_OS](pop.system76.com)
 - [Elementary OS](elementary.io)
 ### [Debian](debian.org)
-Debian is a distro used by **advanced users**. It's more **stable and lightweight** than Ubuntu. It uses **dpkg** as its package manager
+Debian is a distro used by **advanced users**. It's more **stable and lightweight** than Ubuntu. It uses **apt** as its package manager
 #### Distros based on Debian
 - [MX Linux](mxlinux.org)
 - [Deepin](deepin.org)
@@ -66,3 +70,63 @@ Which key depends on your manufacturer. You might have to do a google search.
 If you have managed to boot into your BIOS-Settings, it should look something like this:
 ![BIOS](https://lab4sys.com/wp-content/uploads/2020/03/bios-1320x743.jpg)
 ![UEFI BIOS](https://kids.pplware.sapo.pt/wp-content/uploads/2013/11/uefi_01-560x352.jpg)
+In here you have to navigate to the option for "Secure Boot". You will probably find it under Boot or Security.
+Set it to off and make sure to save your changes.
+### Creating boot usb
+For making your usb bootable you can use a tool like Rufus or BalenaEtcher.
+I prefer BalenaEtcher because its really easy to use. 
+Simply choose the ISO-Image for your distro that you downloaded and select the usb drive you want it to be flashed on.
+**All the data on that usb stick is going to get _deleted_**
+### Booting
+To boot in your recently aquired usb, you have to again hit a key during startup to open the boot menu.
+This probably isn't the same as the key you use for the BIOS.
+There you select the usb we made. Then Linux is going to boot.
+
+Sometimes your required to enter a password. If the user is "liveuser", the password is very likely to be "liveuser" aswell.
+### Installation
+When your distro has booted (and you're logged in) the Installer will open by itself most of the time. If it doesn't look for an app launcher or a dock where you open it. The installers are going to differ but there is an installer used by a lot of distros named [Calamares](calamares.io):
+![Calamares Installer](https://calamares.io/images/gallery/page-partition.png)
+The installation with Calamares is pretty easy and should be no problem. 
+
+When you are asked to select or create a partition, you have to be carefull. First of all, make sure you have selected the right drive.
+Then look for free space or a partition you made where you want to install Linux. 
+
+If there is no free space or no partition you want to install Linux on,
+you will want to resize one of the existing partitions, your Windows Partition for example.
+To do this you can use the [Disk Managment Tool](https://docs.microsoft.com/en-us/windows-server/storage/disk-management/overview-of-disk-management) on Windows or [GParted](gparted.org).
+### Reboot
+After the installation finished you will be prompted to reboot.
+Do this and unplug your usb so it will boot into your fresh Linux installation. 
+Log in with your previously created user account.
+## Package Manager
+In this chapter I will explain what a package manager is and how to use one.
+
+A package manager lets you install/remove and update software from a repository. There are different package managers for different distribtions.
+
+**Some systems may have Pamac installed, which is a GUI way to use a package manager. You will find it in the app launcher under the name "Add/Remove software"**
+
+The most common are:
+### apt
+#### Install
+If you want to install a package type ` sudo apt install <package> `
+
+Some packages might require the command ` sudo apt-get install <package> `
+#### Uninstall
+If you want to remove a package issue the command ` sudo apt remove <package> `
+
+If you also want to remove the config file use the flag ` --purge ` so ` sudo apt remove --purge <package> `
+#### Update
+The command ` sudo apt update ` updates the local index of the repository, the index is the list of all the available packages and their versions.
+
+After that to really update the system enter ` sudo apt upgrade `
+#### Help
+If you have any questions about apt try ` apt help `
+## pacman
+With pacman you will have to use different flags to install/remove and update.
+#### Install
+To install a package with pacman use the ` -S ` Flag: ` sudo pacman -S <package> `
+It's recommended to update the database before you install a package.
+#### Remove
+To remove only the package use the ` -R ` Flag: ` sudo pacman -R <package> `
+
+To remove 
