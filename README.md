@@ -6,7 +6,8 @@ This guide aims to explain how to use some basic linux features and software lik
 - [Glossary](#glossary)
 - [Distrobutions](#distrobutions)
 - [Installation](#installation)
-- [Package Manager](#package manager)
+- [Package Manager](#package_manager)
+- DE / WM
 ## Glossary
 | Word | Description |
 | --- | --- |
