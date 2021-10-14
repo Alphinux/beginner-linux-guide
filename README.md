@@ -5,6 +5,8 @@ This guide aims to explain how to use some basic linux features and software lik
 - [Introduction](#introduction)
 - [Glossary](#glossary)
 - [Distrobutions](#distrobutions)
+- [Installation](#installation)
+- [Package Manager](#package manager)
 ## Glossary
 | Word | Description |
 | --- | --- |
@@ -103,7 +105,7 @@ In this chapter I will explain what a package manager is and how to use one.
 
 A package manager lets you install/remove and update software from a repository. There are different package managers for different distribtions.
 
-**Some systems may have Pamac installed, which is a GUI way to use a package manager. You will find it in the app launcher under the name "Add/Remove software"**
+**Some systems may have [Pamac](#pamac) installed, which is a GUI way to use a package manager. You will find it in the app launcher under the name "Add/Remove software"**
 
 The most common are:
 ### apt
@@ -124,9 +126,21 @@ If you have any questions about apt try ` apt help `
 ## pacman
 With pacman you will have to use different flags to install/remove and update.
 #### Install
-To install a package with pacman use the ` -S ` Flag: ` sudo pacman -S <package> `
+To install a package with pacman use the ` -S ` flag: ` sudo pacman -S <package> `
 It's recommended to update the database before you install a package.
 #### Remove
-To remove only the package use the ` -R ` Flag: ` sudo pacman -R <package> `
+To remove only the package use the ` -R ` flag: ` sudo pacman -R <package> `
 
-To remove 
+To remove the package and its dependencies that are not used by another program use the ` -Rs ` flag.
+
+**Finally to remove the package, avoid orphonaged dependencies and delete it's local configureation use the ` -Rns ` flag,
+which is the way to go most of the time.**
+#### Update
+To update the system use ` sudo pacman -Syu `
+
+To just update the database without updating the packages use ` sudo pacman -Syy `
+### Pamac
+Pamac is an application which let's you interract with your package manager without using the commandline. You can install, remove, search and update packages.
+It can be found in the app launcher under the name "Add/Remove software". ![Pamac](https://forum.endeavouros.com/uploads/default/original/2X/3/37c447d937f4b7d79b51757682aa531ceeefbb8d.png)
+## DE / WM
+To do
