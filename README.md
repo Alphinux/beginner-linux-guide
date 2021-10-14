@@ -7,7 +7,7 @@ This guide aims to explain how to use some basic linux features and software lik
 - [Distrobutions](#distrobutions)
 - [Installation](#installation)
 - [Package Manager](#package_manager)
-- DE / WM
+- [DE](#de)
 ## Glossary
 | Word | Description |
 | --- | --- |
@@ -24,6 +24,7 @@ This guide aims to explain how to use some basic linux features and software lik
 | Options | The word option in the context of a command stands for `-<letter>` |
 | Flag | The word Flag in the context of a command stands for `--<letters>` |
 | Dependencies | Software that the software depends on |
+| Working Directory | The directory in which you are currently in |
 ## Distrobutions
 A distribution - short distro - is basically the linux kernel - the core of an os - bundelt with the software necessary to make it usable. 
 
@@ -101,7 +102,7 @@ To do this you can use the [Disk Managment Tool](https://docs.microsoft.com/en-u
 After the installation finished you will be prompted to reboot.
 Do this and unplug your usb so it will boot into your fresh Linux installation. 
 Log in with your previously created user account.
-## Package Manager
+## Package_Manager
 In this chapter I will explain what a package manager is and how to use one.
 
 A package manager lets you install/remove and update software from a repository. There are different package managers for different distribtions.
@@ -143,5 +144,42 @@ To just update the database without updating the packages use ` sudo pacman -Syy
 ### Pamac
 Pamac is an application which let's you interract with your package manager without using the commandline. You can install, remove, search and update packages.
 It can be found in the app launcher under the name "Add/Remove software". ![Pamac](https://forum.endeavouros.com/uploads/default/original/2X/3/37c447d937f4b7d79b51757682aa531ceeefbb8d.png)
-## DE / WM
-To do
+## DE
+As described in the glossar a desktop enviroment is a window manager and additional software. 
+### List of DEs/WMs
+- [GNOME](gnome.org) A simple DE focused on productivity
+- [KDE Plasma](kde.org/plasma-desktop/) A beautiful highly customizable DE
+- [XFCE](xfce.org) A lightweight DE
+- [Openbox](openbox.org) A WM with nice keyboard shortcuts
+### Installation
+If you want to install another DE or WM you can find a ton of tutorials online.
+## Terminal
+The terminal also called the commandline is the non-GUI way of interacting with your system. It opens up a countless amount of customization and control.
+Although it might look intimidating at first, it isn't, if you know the commands. You don't need to use it, but it's always good to have understanding
+of how to do somethings.
+### Basic Commands
+#### cd 
+cd which stands for change directory is used to navigate the file system in the terminal. You can use it like this: ` cd <directory> `
+#### ls
+ls is used to list the content of the current working directory. You can use it like this: ` ls (/path/to/directory) `
+#### cat
+cat can be used to quickly print the contents of a file. You can use it like this: ` cat /path/to/file `
+#### nano/vim
+Nano or vim are terminal texteditors that can be installed with pacman. You can use them like this: ` nano /path/to/file ` ` vim /path/to/file `
+#### rm
+rm is used to delete files/directorys. You can use it like this: ` rm /path/to/file ` ` rm -r /path/to/directory `
+#### cp
+cp is used to copy files/directorys. You can use it like this: ` cp /path/to/file /path/to/new/file ` ` cp /path/to/directory /path/to/new/directory ` 
+#### mv
+mv is used to move files/directorys. It can also be used to rename a file/directory. You can use it like this: ` mv /path/to/file/directory /new/path/to/file/directory `
+#### clear
+clear is used to clear the terminal. You can use it like this: ` clear `
+#### man
+man is used to show help pages. You can use it like this: ` man <command> `
+#### chmod
+chmod is used to change the rights of a group over a file. You can use it like this: ` chmod <argument> <file> `
+#### systemctl
+systemctl is used to monitor and manage your the services of your system. You can use it like this: ` sudo systemctl status <service> ` ` sudo systemctl start/stop <service> `
+### Concepts of the commandline
+## Script execution
+To execute a script (.sh or compiled file) make it executable ` chmod +x <file> ` and execute it ` ./<file> `
