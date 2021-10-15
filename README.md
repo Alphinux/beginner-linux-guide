@@ -23,6 +23,7 @@ This guide aims to explain how to use some basic linux features and software lik
 | Command | A word (or string) you enter in a command-line |
 | Options | The word option in the context of a command stands for `-<letter>` |
 | Flag | The word Flag in the context of a command stands for `--<letters>` |
+| Pipe | A pipe in the context of the terminal it stands for ` | ` |
 | Dependencies | Software that the software depends on |
 | Working Directory | The directory in which you are currently in |
 ## Distrobutions
@@ -178,8 +179,15 @@ clear is used to clear the terminal. You can use it like this: ` clear `
 man is used to show help pages. You can use it like this: ` man <command> `
 #### chmod
 chmod is used to change the rights of a group over a file. You can use it like this: ` chmod <argument> <file> `
+#### grep
+grep is used to search the output of command connected with a pipe. You can use it like this: ` <command> | grep <keyword> `
 #### systemctl
 systemctl is used to monitor and manage your the services of your system. You can use it like this: ` sudo systemctl status <service> ` ` sudo systemctl start/stop <service> `
 ### Concepts of the commandline
 ## Script execution
 To execute a script (.sh or compiled file) make it executable ` chmod +x <file> ` and execute it ` ./<file> `
+#### Pipes
+You can use Pipes ` | ` to put the output of a command into another. For example: ` ls | grep Down ` This command takes the output of ls
+and searches it with grep. 
+#### Control + C
+The keycombination Ctrl + C is used to kill the process currently running in the terminal.
