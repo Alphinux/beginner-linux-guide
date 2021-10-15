@@ -184,7 +184,7 @@ grep is used to search the output of command connected with a pipe. You can use 
 #### systemctl
 systemctl is used to monitor and manage your the services of your system. You can use it like this: ` sudo systemctl status <service> ` ` sudo systemctl start/stop <service> `
 ### Concepts of the commandline
-## Script execution
+#### Script execution
 To execute a script (.sh or compiled file) make it executable ` chmod +x <file> ` and execute it ` ./<file> `
 #### Pipes
 You can use Pipes ` | ` to put the output of a command into another. For example: ` ls | grep Down ` This command takes the output of ls
